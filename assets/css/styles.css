@@ -1,0 +1,378 @@
+/* Rothaarsteig — deelnemerssite */
+:root {
+  --bg: #f4f1eb;
+  --surface: #fffefb;
+  --ink: #1c241c;
+  --muted: #4a5548;
+  --accent: #2d5a3d;
+  --accent-soft: #e8f0e8;
+  --border: #d4d9cf;
+  --shadow: 0 2px 12px rgba(28, 36, 28, 0.08);
+  --radius: 12px;
+  --font: "DM Sans", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: #1e4028;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow);
+}
+
+.site-header__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--accent);
+}
+
+.brand span {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 3rem;
+}
+
+.hero {
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.card h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin: 1rem 0 0.4rem;
+  color: var(--accent);
+}
+
+.card p:last-child,
+.card ul:last-child {
+  margin-bottom: 0;
+}
+
+.card p,
+.card ul {
+  margin-top: 0;
+}
+
+ul.clean {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+ul.clean li {
+  margin-bottom: 0.35rem;
+}
+
+.grid-2 {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.1rem;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: #234a30;
+  color: #fff;
+}
+
+.btn--secondary {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.btn--secondary:hover {
+  background: #dce8dc;
+  color: #1e4028;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.map-frame {
+  width: 100%;
+  height: min(70vh, 560px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: block;
+}
+
+.day-block {
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.day-block:last-child {
+  margin-bottom: 0;
+}
+
+.day-block h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+}
+
+.day-meta {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.35rem;
+}
+
+table.info {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+table.info th,
+table.info td {
+  text-align: left;
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+table.info th {
+  color: var(--muted);
+  font-weight: 500;
+  width: 7.5rem;
+}
+
+.schedule-wrap {
+  overflow-x: auto;
+  margin: 0.75rem 0 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+table.schedule {
+  width: 100%;
+  min-width: 28rem;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+table.schedule thead th {
+  text-align: left;
+  padding: 0.5rem 0.55rem;
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+table.schedule td {
+  padding: 0.45rem 0.55rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+table.schedule tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.callout {
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin: 1rem 0;
+  border: 1px solid #c5d6c5;
+}
+
+.callout strong {
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.site-footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.participant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.participant-grid li {
+  background: var(--accent-soft);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
