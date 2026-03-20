@@ -1,6 +1,10 @@
 # rotharsteig
 
-Static page embedding the [Rotharsteig Google Map](https://www.google.com/maps/d/embed?mid=1tMYhOov-lUdzFzvPdeNLQQ5P7MlCr9I&ehbc=2E312F).
+Static **deelnemerssite** voor de Rothaarsteig-hike (januari 2026): home, route/kaart, accommodaties, eten, praktisch (kosten, auto’s, Splitser).
+
+- **Splitser:** lijst staat in `praktisch.html` (`app.splitser.com`).
+
+De embedded kaart: [Google My Maps](https://www.google.com/maps/d/embed?mid=1tMYhOov-lUdzFzvPdeNLQQ5P7MlCr9I&ehbc=2E312F).
 
 ## Deploy on GitHub Pages
 
