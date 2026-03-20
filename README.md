@@ -1,8 +1,10 @@
 # rotharsteig
 
-Static **deelnemerssite** voor de Rothaarsteig-hike (januari 2026): home, route/kaart, accommodaties, eten, praktisch (kosten, auto’s, Splitser).
+Static **deelnemerssite** voor de Rothaarsteig-hike (maart 2026): home, route/kaart, accommodaties, eten, praktisch (kosten, auto’s, Splitser).
 
 - **Splitser:** lijst staat in `praktisch.html` (`app.splitser.com`).
+- **Open Graph:** `og-image.png` + meta-tags in elke HTML-pagina. De absolute URL’s staan op `https://lennartdeknikker.github.io/rotharsteig/` — bij een **eigen domein** of andere repo-naam overal in de `<head>` dezelfde basis-URL vervangen (`canonical`, `og:url`, `og:image`, `twitter:image`).
+- **Privé / geen indexering:** `robots.txt` blokkeert crawlers (`Disallow: /`), en elke pagina heeft `<meta name="robots" content="noindex, nofollow">`. Dit is geen wachtwoord: de site blijft openbaar bereikbaar met de URL; voor echte afscherming gebruik je een private repo + Pages met auth, of een wachtwoord voor de site.
 
 De embedded kaart: [Google My Maps](https://www.google.com/maps/d/embed?mid=1tMYhOov-lUdzFzvPdeNLQQ5P7MlCr9I&ehbc=2E312F).
 

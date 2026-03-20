@@ -1,0 +1,3 @@
+# Geen indexering — privé deelnemerssite
+User-agent: *
+Disallow: /
